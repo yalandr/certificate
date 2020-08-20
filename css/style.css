@@ -1,0 +1,263 @@
+* {box-sizing: border-box;}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	background: #ccc;
+}
+
+.text-white {color: #fff;}
+
+.text-blue {color: #4080A3;}
+
+
+/*==== Header ==========================*/
+
+.header {
+	width: 100%;
+	height: 100vh;
+	/*background-image: url(../img/header-main.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;*/
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+}
+
+.header::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/header-main.jpg) center no-repeat;
+	background-size: cover;
+	z-index: -1;
+	animation: transform 35s infinite;
+}
+
+.header-logo {
+	position: absolute;
+	top: 20px;
+	right: 40px;
+	width: 100px; 
+	height: 100px;
+	border-radius: 4px;
+	box-shadow: 0 0 4px #222;
+	padding: 8px;
+	background-color: #fff;
+}
+
+.mvs-logo {
+	width: 80px; 
+	height: 80px;
+}
+
+.header__title {
+	position: absolute;
+	left: 100px;
+	bottom: 40px;
+	font-size: 32px;
+	text-shadow: 3px 4px 6px #111;
+	font-family: 'Literata', serif;
+}
+
+
+/*==== Section Options =====================*/
+
+.options {
+	width: 100%;
+	height: auto;	
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #5A91B0;
+	color: #111;
+}
+
+.container {
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.options-item {
+	width: 14%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.option-icon {
+	width: 60px;
+	height: 60px;
+	opacity: 0.8;
+}
+
+.next-icon {width: 32px; height: 32px;}
+
+
+/*==== Section Phone ===================*/
+
+.phone {
+	width: 100%;
+	height: auto;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #20211C;
+}
+
+.phone-container {
+	width: 80%;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.phone-title {
+	width: 50%;
+	height: auto;
+	color: #5A91B0;
+	font-size: 44px;
+}
+
+.phone-number {
+	width: 50%;
+	height: 120px;
+	font-size: 44px;
+	border: 8px solid #5A91B0;
+	border-radius: 8px;
+	padding: 20px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.phone-icon {width: 56px; height: 56px;}
+
+.call-number {text-decoration: none; color: #ddd;}
+
+
+/*==== Footer =========================*/
+
+.footer {
+	width: 100%;
+	height: auto;
+	background: #fff;
+	padding-top: 60px;
+	padding-bottom: 120px;
+}
+
+.footer-container {width: 80%; margin: 0 auto;}
+
+.footer-title {
+	font-family: 'Open Sans Condensed', sans-serif;
+	margin-bottom: 40px;
+}
+
+.participants {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.participant-logo {height: 100px; width: auto;}
+
+
+
+
+/*==== Media Queries ================================*/
+
+@media (max-width: 1099px) {
+
+	.container {flex-wrap: wrap;}
+
+	.options-item {
+		width: 33%;
+		padding-right: 10px;
+		padding-bottom: 20px;
+	}
+
+	.option-icon {width: 80px; height: 80px;}
+
+	.phone-container {width: 90%;}
+
+	.phone-title {font-size: 28px;}
+
+	.phone-number {font-size: 28px;}
+
+	.phone-icon {width: 48px; height: 48px;}
+
+	.footer-title {font-size: 32px;}
+
+	.participants {flex-wrap: wrap;}
+
+	.participant-logo {margin-bottom: 40px;}
+}
+
+@media (max-width: 768px) {
+
+	.header__title {
+		left: 40px;
+		bottom: 20px;
+		font-size: 20px;
+	}
+
+	.phone-title {font-size: 24px;}
+
+	.phone-number {height: auto; font-size: 24px;}
+
+	.phone-icon {width: 36px; height: 36px;}
+}
+
+@media (max-width: 479px) {
+
+	.header__title {left: 20px; font-size: 20px;}
+
+	.container {flex-direction: column;}
+
+	.options-item {
+		width: 100%;
+		margin-bottom: 40px;
+		align-items: center;
+		border-bottom: 1px solid #555;
+		padding-bottom: 20px;
+	}
+
+	.phone-container {flex-direction: column;}
+
+	.phone-title {width: 100%; font-size: 32px;}
+
+	.phone-number {
+		width: 100%;
+		height: auto;
+		font-size: 24px;
+	}
+
+	.phone-icon {width: 32px; height: 32px;}
+
+	.footer {padding-top: 40px;}
+
+	.footer-title {font-size: 24px;}
+
+	.participants {flex-direction: column; padding-top: 20px;}
+
+	.participant-logo {
+		height: 100px;
+		width: auto;
+		margin-bottom: 40px;
+	}
+
+}
+
+@keyframes transform {
+	50%{transform: scale(1.3);}
+	100%{transform: scale(1);}
+}
